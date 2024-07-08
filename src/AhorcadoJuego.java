@@ -1,9 +1,6 @@
-package mainClasses.poo.git;
 
 import java.util.Arrays;
 import javax.swing.JOptionPane;
-
-import mainClasses.poo.Words;
 
 public class AhorcadoJuego {
   private boolean complete;
@@ -14,7 +11,7 @@ public class AhorcadoJuego {
   public AhorcadoJuego(int theme) {
     this.setOfWords = new Words();
     this.complete = false;
-    this.auxCharsWord = setOfWords.getWord(theme - 1).toCharArray();
+    this.auxCharsWord = setOfWords.getWord(theme).toCharArray();
     this.auxHiddenWord = new char[auxCharsWord.length];
     fillUpString();
   }
@@ -42,7 +39,7 @@ public class AhorcadoJuego {
         String.valueOf(auxHiddenWord),
         "\ntry: " + att + "\nRound: " + round + "\nType in a letter: ",
         JOptionPane.INFORMATION_MESSAGE);
-    if (!ans.matches(ans)) {
+    if (!ans.matches(regex)) {
       System.out.println("the regular expresion did not find any matches on the word");
       return '\0';
     }

@@ -9,6 +9,7 @@ public class AhorcadoJuego {
   private boolean complete;
   private Words setOfWords = null;
   private char[] auxCharsWord = null, auxHiddenWord = null;
+  private String regex = "[a-z]?";
 
   public AhorcadoJuego(int theme) {
     this.setOfWords = new Words();
@@ -20,6 +21,10 @@ public class AhorcadoJuego {
 
   private void fillUpString() {
     Arrays.fill(auxHiddenWord, '*');
+  }
+
+  public String getRegex() {
+    return regex;
   }
 
   private void checkCompletion() {
@@ -37,6 +42,10 @@ public class AhorcadoJuego {
         String.valueOf(auxHiddenWord),
         "\ntry: " + att + "\nRound: " + round + "\nType in a letter: ",
         JOptionPane.INFORMATION_MESSAGE);
+    if (!ans.matches(ans)) {
+      System.out.println("the regular expresion did not find any matches on the word");
+      return '\0';
+    }
     return ans.charAt(0);
   }
 

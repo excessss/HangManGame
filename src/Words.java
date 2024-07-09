@@ -1,5 +1,8 @@
 import java.util.Random;
 
+/**
+ * Words
+ */
 public class Words {
   private String[][] newSetWords;
   private final String setWords[][] = {

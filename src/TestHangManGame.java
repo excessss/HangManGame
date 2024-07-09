@@ -1,7 +1,6 @@
-
-public class TestAhorcado {
+public class TestHangManGame {
   public static void main(String[] args) {
-    MenuPanel obj = new MenuPanel();
+    PanelMenu obj = new PanelMenu();
     obj.userMenu();
   }
 }

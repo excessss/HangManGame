@@ -6,7 +6,7 @@ public class AhorcadoJuego {
   private boolean complete;
   private Words setOfWords = null;
   private char[] auxCharsWord = null, auxHiddenWord = null;
-  private String regex = "[a-z]?";
+  private String regex = "[a-z]";
 
   public AhorcadoJuego(int theme) {
     this.setOfWords = new Words();
@@ -34,16 +34,18 @@ public class AhorcadoJuego {
   }
 
   private char newChar(int round, int att) {
-    String ans;
+    String ans = "";
+    System.out.println(ans.matches(regex));
     ans = JOptionPane.showInputDialog(null,
         String.valueOf(auxHiddenWord),
         "\ntry: " + att + "\nRound: " + round + "\nType in a letter: ",
         JOptionPane.INFORMATION_MESSAGE);
-    if (!ans.matches(regex)) {
-      System.out.println("the regular expresion did not find any matches on the word");
-      return '\0';
+    while (!ans.matches(regex)) {
+      if (!ans.matches(regex)) {
+        ans = JOptionPane.showInputDialog(null, "try again", "Invalid input", JOptionPane.WARNING_MESSAGE);
+      }
     }
-    return ans.charAt(0);
+    return ans.toCharArray()[0];
   }
 
   private boolean foundLetter(char letter) {

@@ -6,7 +6,7 @@ public class Words {
       { "Python", "Java", "CCS", "Cobol", "JavaScript", "React", "NodeJS" },
       { "logic", "binary", "programming", "variable", "array", "structure" },
       { "mathematics", "algebra", "calculus", "trigonometry", "estadistic" },
-      { "motherboard", "cpu", "memory", "hardware", "interface", "driver" }
+      { "mouse", "speaker", "ram", "hardware", "interface", "dataBase"}
   };
 
   public Words() {
